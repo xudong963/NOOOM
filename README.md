@@ -17,7 +17,7 @@ export BENDSQL_DSN="databend://<user>:<pwd>@<host>:443/<database>"
 ## Run
 
 ```
-python3 ./spill.py [--database <database>] [--ratio <memoryratio>]
+python3 ./spill.py [--ratio <memoryratio>]
 ```
 
 * `--ratio`: join spilling memory ratio, range:[0, 100), zero means unlimited.

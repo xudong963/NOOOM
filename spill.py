@@ -37,13 +37,11 @@ def main():
         description="Execute SQL queries on limited memery to test databend spilling capability"
     )
     parser.add_argument("--ratio", default=0)
-    parser.add_argument("--database", default=None, required=True)
 
     args = parser.parse_args()
 
     # Before runing sqls, set the memory limit by ratio
     execute_sql(f"set join_spilling_memory_ratio = {args.ratio};")
-    execute_sql(f"use {args.database};")
 
     dir = "queries/"
     # Read the SQL files in `queries` directory
